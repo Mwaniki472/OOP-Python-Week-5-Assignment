@@ -1,15 +1,27 @@
-# 🌸🐾 Object-Oriented Programming (OOP) Examples in Python
+# 🌟 Object-Oriented Programming (OOP) Examples in Python
 
-This project demonstrates **basic OOP concepts** in Python using two examples:
-1. **Animals** → shows **Polymorphism**
-2. **Flowers and Roses** → shows **Inheritance, Encapsulation, and Polymorphism**
+This repository contains beginner-friendly Python examples that demonstrate the **core OOP concepts**:
+
+- **Inheritance**
+- **Encapsulation**
+- **Polymorphism**
 
 ---
 
-## 🐾 Example 1: Polymorphism with Animals
+## 🐾 Example 1: Polymorphism (Animals)
 
-### Code
+This example shows how the same method `move()` behaves differently depending on the object:
+
+- `Animal` → moves on all fours  
+- `Bird` → flies by flapping wings  
+- `Fish` → swims using fins  
+- `Reptile` → slithers on the ground
+
+
+### 📌 Code
 ```python
+# Polymorphism Example: Animals
+
 class Animal:
     def move(self):
         print("The animal moves on all fours.")
@@ -26,41 +38,11 @@ class Reptile(Animal):
     def move(self):
         print("The reptile slithers on the ground.")
 
+# Demonstration of polymorphism
 Animals = [Animal(), Bird(), Fish(), Reptile()]
 for animal in Animals:
     animal.move()
-# OOP-Python-Week-5-Assignment
-xplanation
 
-All classes have a method move().
 
-The behavior changes depending on the object (Bird, Fish, Reptile).
-
-This is Polymorphism → “same name, different actions.”
-# Parent class
-class Flower:
-    def __init__(self, name, color, petal_count=5, has_thorns=True):
-        self.name = name
-        self.color = color
-        self.petal_count = petal_count
-        self.has_thorns = has_thorns
-        self.fragrance = "Mild"
-
-    def describe(self):
-        thorn_status = "has thorns" if self.has_thorns else "does not have thorns"
-        return (f"{self.name} is a {self.color} rose with {self.petal_count} petals, "
-                f"it {thorn_status} and has a {self.fragrance} fragrance.")
-
-# Child class
-class Rose(Flower):
-    def __init__(self, name, color, petal_count=5, has_thorns=True):
-        super().__init__(name, color, petal_count, has_thorns)
-        self.fragrance = "Strong"   # Overridden attribute
-
-    def describe(self):
-        base_description = super().describe()
-        return f"{base_description} It is known for its {self.fragrance} fragrance."
-
-Rose1 = Rose("Madam Red", "red", 5, True)
+ Red", "red", 5, True)
 print(Rose1.describe())
-
