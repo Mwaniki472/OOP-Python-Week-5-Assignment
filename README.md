@@ -1,50 +1,40 @@
+# 🌸🐾 OOP in Python – Week 5 Assignment
 
-# 🌟 Object-Oriented Programming (OOP) Examples in Python
-
-This repository contains Python examples that demonstrate the **core OOP concepts**:
-
-- **Inheritance**
+This repository contains Python examples demonstrating **Object-Oriented Programming (OOP)** concepts:  
 - **Encapsulation**
+- **Inheritance**
 - **Polymorphism**
 
 ---
 
-## 🐾 Example 1: Polymorphism (Animals)
+## 📌 Activity 1: Flowers (Encapsulation & Inheritance)
 
-This example shows how the same method `move()` behaves differently depending on the object:
-
-- `Animal` → moves on all fours  
-- `Bird` → flies by flapping wings  
-- `Fish` → swims using fins  
-- `Reptile` → slithers on the ground
-
-
-### 📌 Code
 ```python
-# Polymorphism Example: Animals
+# Parent class
+class Flower:
+    def __init__(self, name, color, petal_count=5, has_thorns=True):
+        self.name = name
+        self.color = color
+        self.petal_count = petal_count
+        self.has_thorns = has_thorns
+        self.fragrance = "Mild"
 
-class Animal:
-    def move(self):
-        print("The animal moves on all fours.")
+    def describe(self):
+        thorn_status = "has thorns" if self.has_thorns else "does not have thorns"
+        return (f"{self.name} is a {self.color} rose with {self.petal_count} petals, "
+                f"it {thorn_status} and has a {self.fragrance} fragrance.")
 
-class Bird(Animal):
-    def move(self):
-        print("The bird flies by flapping its wings.")
+# Child class
+class Rose(Flower):
+    def __init__(self, name, color, petal_count=5, has_thorns=True):
+        super().__init__(name, color, petal_count, has_thorns)
+        self.fragrance = "Strong"
 
-class Fish(Animal):
-    def move(self):
-        print("The fish swims using its fins.")
+    def describe(self):
+        base_description = super().describe()
+        return f"{base_description} It is known for its {self.fragrance} fragrance."
 
-class Reptile(Animal):
-    def move(self):
-        print("The reptile slithers on the ground.")
-
-# Demonstration of polymorphism
-Animals = [Animal(), Bird(), Fish(), Reptile()]
-for animal in Animals:
-    animal.move()
-
-
- Red", "red", 5, True)
+# Example usage
+Rose1 = Rose("Madam Red", "red", 5, True)
 print(Rose1.describe())
 
