@@ -1,6 +1,6 @@
 # 🌟 Object-Oriented Programming (OOP) Examples in Python
 
-This repository contains beginner-friendly Python examples that demonstrate the **core OOP concepts**:
+This repository contains Python examples that demonstrate the **core OOP concepts**:
 
 - **Inheritance**
 - **Encapsulation**
